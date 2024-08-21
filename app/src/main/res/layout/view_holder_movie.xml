@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="com.example.listofmovies.data.Movie"/>
+        <variable
+            name="movie"
+            type="com.example.listofmovies.data.Movie" />
+
+
+
+    </data>
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:layout_marginTop="4dp"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:load="@{movie.poster}"
+            android:id="@+id/movie_image"
+            android:padding="4dp"
+            android:src="@color/black"
+            android:contentDescription="Poster Image"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="helo baby "
+            android:textSize="18dp"
+            android:layout_below="@+id/movie_image"
+            android:textStyle="bold"
+            android:text="@{movie.title}"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:id="@+id/movie_titel"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="helo "
+            android:textSize="18dp"
+            android:layout_below="@+id/movie_titel"
+            android:textStyle="italic"
+            android:layout_marginStart="4dp"
+            android:text="@{movie.year}"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+
+            style="@style/TextAppearance.AppCompat.Subhead"
+            android:id="@+id/movie_date"/>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+</layout>
